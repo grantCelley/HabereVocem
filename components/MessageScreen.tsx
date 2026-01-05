@@ -1,6 +1,6 @@
 import { ChatBubble } from "@/components/chatBubble";
 import { AuthorType, MessageType } from "@/Contexts/mainContext";
-import { FlatList, ScrollView, } from "react-native";
+import { FlatList, ScrollView, StyleSheet } from "react-native";
 
 
 
@@ -17,7 +17,7 @@ export const MessageScreen = () => {
     ];
 
     return (
-        <ScrollView>
+        <ScrollView style={styles.list}>
             <FlatList data={messages} renderItem={(item) => {
                 return (
                 <ChatBubble message={item.item} />
@@ -26,3 +26,10 @@ export const MessageScreen = () => {
         </ScrollView>
     );
 }
+
+const styles = StyleSheet.create({
+    list: {
+        flex: 1,
+        alignSelf: 'stretch',
+    }
+});
