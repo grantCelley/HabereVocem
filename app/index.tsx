@@ -28,7 +28,7 @@ export default function Index() {
         style={{
           flex: 1,
           justifyContent: "center",
-          alignItems: "center",
+          alignItems: 'stretch',
         }}
       >
         <MessageContext value={{ messages, setMessages, addUserMessage, addBotMessage}}>
