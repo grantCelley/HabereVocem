@@ -1,21 +1,14 @@
 import { ChatBubble } from "@/components/chatBubble";
-import { AuthorType, MessageType } from "@/Contexts/mainContext";
+import { MessageContext } from "@/Contexts/mainContext";
+import { useContext, useState } from "react";
 import { FlatList, ScrollView, StyleSheet } from "react-native";
 
 
 
 export const MessageScreen = () => {
-    const messages: MessageType[] = [
-        {
-            author: AuthorType.USER,
-            text: "User Text"
-        },
-        {
-            author: AuthorType.BOT,
-            text: "Bot Text"
-        }
-    ];
-
+    const messageContext = useContext(MessageContext);
+    const [messages, setMessages] = useState(messageContext.messages);
+    const messageLength = messages.length;
     return (
         <ScrollView style={styles.list}>
             <FlatList data={messages} renderItem={(item) => {
@@ -23,6 +16,7 @@ export const MessageScreen = () => {
                 <ChatBubble message={item.item} />
                 )
             }} />
+            
         </ScrollView>
     );
 }
