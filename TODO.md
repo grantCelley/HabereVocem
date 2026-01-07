@@ -1,7 +1,7 @@
 # version 0.1
 * Rewrite readme
-* write the context
-* add the form to send messages
+* ~~write the context~~
+* ~~add the form to send messages~~
 * add whisper live transcribe
 
 # version 0.2
