@@ -32,13 +32,13 @@ const styles = StyleSheet.create({
 
     userStyles: {
         textAlign: 'left',
-        alignSelf: 'flex-start',
+        alignSelf: 'flex-end',
         backgroundColor: 'dodgerblue',
     },
 
     botStyles: {
        textAlign: 'right',
-       alignSelf: 'flex-end',
+       alignSelf: 'flex-start',
        backgroundColor: 'lawngreen',
 
     },

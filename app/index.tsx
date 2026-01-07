@@ -10,17 +10,17 @@ export default function Index() {
   const addUserMessage = (content:string) => {
     const newMessage: MessageType = {
       text: content,
-      author: AuthorType.BOT,
+      author: AuthorType.USER,
     };
-    setMessages((prevState) => [...prevState, newMessage]);
+    setMessages([...messages, newMessage]);
   };
   
   const addBotMessage = (content: string) => {
     const newMessage: MessageType = {
       text: content,
-      author: AuthorType.USER,
+      author: AuthorType.BOT,
     };
-    setMessages((prevState) => [...prevState, newMessage]);
+    setMessages([...messages, newMessage]);
   };
   return (
 
