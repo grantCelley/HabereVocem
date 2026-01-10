@@ -2,24 +2,23 @@ import { ChatBubble } from "@/components/chatBubble";
 import { SendForm } from "@/components/SendForm";
 import { MessageContext } from "@/Contexts/mainContext";
 import { useContext } from "react";
-import { FlatList, ScrollView, StyleSheet, View } from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
 
 
 
 export const MessageScreen = () => {
     const messageContext = useContext(MessageContext);
     return (
-        <View>
-        <ScrollView style={styles.list}>
-            <FlatList data={messageContext.messages} renderItem={(item) => {
+        <View style={styles.container}>
+            <FlatList style={styles.list} data={messageContext.messages} renderItem={(item) => {
                 return (
                 <ChatBubble message={item.item} />
                 )
             }} />
             
-        </ScrollView>
+        
         <View style={styles.input}>
-        <SendForm />
+            <SendForm />
         </View>
         </View>
     );
@@ -27,17 +26,22 @@ export const MessageScreen = () => {
 
 const styles = StyleSheet.create({
     list: {
-        flex: 5,
-        maxHeight: "85%"
+        
+        maxHeight: "85%",
+        textAlignVertical: "top",
     },
 
     input:{
-        flex:1,
-        position: 'fixed',
+        position:"fixed",
         bottom: 0,
-        left:0,
-        right:0,
-        minHeight:"10%",
+        right: 0,
+        minHeight:"5%",
+        maxHeight:"45%",
+        height:"auto"
+
         
+    },
+    container:{
+        height:'100%'
     }
 });

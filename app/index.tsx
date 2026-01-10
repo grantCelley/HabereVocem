@@ -2,9 +2,21 @@ import { MessageScreen } from '@/components/MessageScreen';
 import { AuthorType, MessageContext, type MessageType } from '@/Contexts/mainContext';
 import { useState } from "react";
 import { View } from "react-native";
-// import { messageContext } from "@/Contexts/mainContext";
+
+//import { initWhisper, initWhisperVad } from 'whisper.rn';
+
 
 export default function Index() {
+/** 
+  const whisperContext = initWhisper({
+    filePath: require('../assets/models/ggml-base.bin'),
+  });
+
+  const whisperVAD =  initWhisperVad({
+    filePath: require('../assets/models/ggml-silero-v5.1.2.bin'),
+    nThreads: 2,
+  })
+*/
   const [messages, setMessages] = useState<MessageType[]>([]);
   
   const addUserMessage = (content:string) => {

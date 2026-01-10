@@ -1,6 +1,6 @@
 import { MessageContext } from '@/Contexts/mainContext';
 import { useContext, useState } from "react";
-import { Pressable, StyleSheet, TextInput, View } from "react-native";
+import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 
 export const SendForm = () => {
   const [message, setMessage] = useState("")
@@ -22,7 +22,9 @@ export const SendForm = () => {
               setMessage("");
             }}
             style={styles.button} 
-          >Send</Pressable>
+          >
+            <Text>Send</Text>
+          </Pressable>
         </View>
     )
 }
@@ -35,7 +37,7 @@ const styles = StyleSheet.create({
   },
   input:{
     borderColor: '#999',
-    borderTopWidth:1,
+    borderWidth:1,
     borderRadius:5,
     width: "80%",
     alignSelf: 'stretch'
